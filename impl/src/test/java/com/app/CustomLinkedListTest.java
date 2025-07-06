@@ -23,24 +23,20 @@ public class CustomLinkedListTest {
     @DisplayName("getFirst() method successful test")
     @Test
     void testGetFirst(){
-        lst.addFirst(20);
-        lst.addFirst(10);
-        assertEquals(10, lst.getFirst());
+        assertEquals(20, lst.getFirst());
     }
 
     @DisplayName("getLast() method successful test")
     @Test
     void testGetLast(){
-        lst.addFirst(20);
-        lst.addFirst(10);
-        assertEquals(20, lst.getLast());
+        assertEquals(30, lst.getLast());
     }
 
     @DisplayName("get(idx) method successful test")
     @Test
     void testGet(){
-        assertEquals(10, lst.get(0));
-        assertEquals(20, lst.get(1));
+        assertEquals(20, lst.get(0));
+        assertEquals(30, lst.get(1));
     }
 
     @DisplayName("addFirst(el) method successful size-checking test")
@@ -59,11 +55,11 @@ public class CustomLinkedListTest {
         assertEquals(4, lst.size());
     }
 
-    @DisplayName("addLast(el) method successful size-checking test")
+    @DisplayName("add(el) method successful size-checking test")
     @Test
     void testAdd(){
         lst.add(0, 10);
-        lst.add(3, 40);
+        lst.add(2, 40);
         assertEquals(4, lst.size());
     }
 
@@ -89,7 +85,7 @@ public class CustomLinkedListTest {
         assertEquals(50, lst.get(3));
     }
 
-    @DisplayName("addLast(el) method successful order-checking test")
+    @DisplayName("add(el) method successful order-checking test")
     @Test
     void testAddAndGet(){
         lst.add(1, 21);
@@ -123,7 +119,7 @@ public class CustomLinkedListTest {
     void testRemove(){
         lst.remove(1);
         assertEquals(1, lst.size());
-        lst.remove(1);
+        lst.remove(0);
         assertEquals(0, lst.size());
     }
 
