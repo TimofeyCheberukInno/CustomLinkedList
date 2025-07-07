@@ -104,7 +104,6 @@ public class CustomLinkedList<T> implements CustomLinkedListInterface<T> {
 
     /**
      * @return first element of the list
-     * @throws IllegalArgumentException if idx is negative
      * @throws NoSuchElementException if there is no element on idx position in the list
      */
     @Override
@@ -114,12 +113,11 @@ public class CustomLinkedList<T> implements CustomLinkedListInterface<T> {
 
     /**
      * @return the last element of the list
-     * @throws IllegalArgumentException if idx is negative
      * @throws NoSuchElementException if there is no element on idx position in the list
      */
     @Override
     public T getLast() {
-        return this.get(size - 1);
+        return this.get(Math.max(size - 1, 0));
     }
 
     /**
@@ -160,7 +158,7 @@ public class CustomLinkedList<T> implements CustomLinkedListInterface<T> {
      */
     @Override
     public T removeLast() {
-        return this.remove(size - 1);
+        return this.remove(Math.max(size - 1, 0));
     }
 
     /**
